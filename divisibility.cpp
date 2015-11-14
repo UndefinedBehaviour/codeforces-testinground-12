@@ -7,6 +7,9 @@ int main(int argc, char *argv[]) {
     long long a;
     long long b;
     cin >> k >> a >> b;
-    cout << (b - a) / k + 1;
-    return 0;
+    long long res = (b - a) / k;
+    if ((a >= 0 ? a % k : -a % k) + (b >= 0 ? b % k : -b % k) < k)
+        cout << res + 1;
+    else
+        cout << res;
 }
